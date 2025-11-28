@@ -136,5 +136,3 @@ This is just a high-level summary; see the code for details.
 ### 5.1. Copyright (code)
 Copyright (c) 2025 Mario von Bassen. All rights reserved.
 
-```text
-
