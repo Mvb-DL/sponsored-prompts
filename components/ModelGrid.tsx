@@ -12,21 +12,15 @@ type Props = {
 
 export function ModelGrid({ selectedModelId, onSelectModel }: Props) {
   return (
-    <div className="mt-0 md:mt-8">
-      {/* Mobile: own heading + "How it works" arrow */}
+    // Oben Abstand:
+    // - Mobile: mt-6 (mehr Luft nach oben nach dem Scrollen)
+    // - Desktop: mt-8 wie gehabt
+    <div className="mt-6 md:mt-8">
+      {/* Mobile: own heading */}
       <div className="mb-4 flex flex-col items-center gap-1 md:hidden">
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-500 text-center">
           Our sponsored models
         </p>
-        <a
-          href="#how-it-works"
-          className="inline-flex flex-col items-center text-zinc-500 hover:text-zinc-100 transition-colors"
-        >
-          <span className="text-[10px] uppercase tracking-[0.2em] mb-0.5">
-            How it works
-          </span>
-          <span className="text-xl leading-none">↓</span>
-        </a>
       </div>
 
       {/* Desktop: heading inside the grid */}
@@ -60,7 +54,6 @@ export function ModelGrid({ selectedModelId, onSelectModel }: Props) {
                       height={40}
                       className={[
                         'h-full w-full object-contain',
-                        // Claude logo slightly smaller
                         isClaude ? 'scale-[0.75]' : '',
                       ].join(' ')}
                     />

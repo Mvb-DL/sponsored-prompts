@@ -46,25 +46,35 @@ export function ChatUI() {
     const target = isMobile ? chatCardRef.current : chatSectionRef.current;
     if (!target) return;
 
-    const scrollToCenter = () => {
+    const scrollToPosition = () => {
       const rect = target.getBoundingClientRect();
       const elementHeight = rect.height;
       const viewportHeight = window.innerHeight;
 
       const targetTopInDocument = rect.top + window.scrollY;
-      const top =
-        targetTopInDocument - (viewportHeight - elementHeight) / 2;
+
+      let top: number;
+
+      if (isMobile) {
+        // Auf Mobile: Karte etwas höher im Viewport stehen lassen
+        const MOBILE_OFFSET_PX = 96; // nach Bedarf anpassen (z.B. 80, 96, 112 …)
+        top = targetTopInDocument - MOBILE_OFFSET_PX;
+      } else {
+        // Desktop: weiterhin annähernd zentrieren
+        top =
+          targetTopInDocument - (viewportHeight - elementHeight) / 2;
+      }
 
       window.scrollTo({
-        top,
+        top: Math.max(0, top),
         behavior: 'smooth',
       });
     };
 
     if ('requestAnimationFrame' in window) {
-      requestAnimationFrame(scrollToCenter);
+      requestAnimationFrame(scrollToPosition);
     } else {
-      scrollToCenter();
+      scrollToPosition();
     }
   }, [selectedModelId]);
 
@@ -140,7 +150,7 @@ export function ChatUI() {
   return (
     <>
       <section ref={chatSectionRef} className="mt-8">
-        {/* Model grid directly under the main title */}
+        {/* Model grid */}
         <ModelGrid
           selectedModelId={selectedModelId}
           onSelectModel={handleSelectModel}
@@ -222,9 +232,21 @@ export function ChatUI() {
             </div>
           </div>
         ) : (
-          <p className="mt-6 text-xs text-zinc-400 text-center">
-            Select a model above to start your first sponsored prompt.
-          </p>
+          <div className="mt-6 flex flex-col items-center gap-2">
+            <p className="text-xs text-zinc-400 text-center">
+              Select a model above to start your first sponsored prompt.
+            </p>
+            {/* How it works + Pfeil NUR auf Mobile */}
+            <a
+              href="#how-it-works"
+              className="inline-flex flex-col items-center text-zinc-500 hover:text-zinc-100 transition-colors md:hidden"
+            >
+              <span className="text-[10px] uppercase tracking-[0.2em] mb-0.5">
+                How it works
+              </span>
+              <span className="text-xl leading-none">↓</span>
+            </a>
+          </div>
         )}
       </section>
 
