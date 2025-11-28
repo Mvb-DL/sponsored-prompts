@@ -55,53 +55,78 @@ export function BackgroundLines() {
         </defs>
 
         {/* statische + animierte Linien übereinander */}
+        {/* Alle Linien sind jetzt Kurven (C / S) statt eckiger L-Segmente */}
 
-        {/* Diagonal */}
+        {/* Obere Wellenlinie */}
         <path
           className="line-static"
-          d="M -100 150 L 150 50 L 450 120 L 750 40 L 1100 120"
+          d="M -120 140
+             C  80  60, 280  60, 480 130
+             S  880 200, 1120  80"
           stroke="url(#bgLinesGradientSoft)"
+          fill="none"
         />
         <path
           className="line-1"
-          d="M -100 150 L 150 50 L 450 120 L 750 40 L 1100 120"
+          d="M -120 140
+             C  80  60, 280  60, 480 130
+             S  880 200, 1120  80"
           stroke="url(#bgLinesGradient)"
+          fill="none"
         />
 
-        {/* weiche Kurve */}
+        {/* Mittlere weiche Kurve */}
         <path
           className="line-static"
-          d="M -80 400 C 200 360, 380 420, 620 380 C 820 340, 980 380, 1120 360"
+          d="M -80 400
+             C 120 360, 320 440, 520 380
+             S  920 340, 1120 360"
           stroke="url(#bgLinesGradientSoft)"
+          fill="none"
         />
         <path
           className="line-2 line-soft"
-          d="M -80 400 C 200 360, 380 420, 620 380 C 820 340, 980 380, 1120 360"
+          d="M -80 400
+             C 120 360, 320 440, 520 380
+             S  920 340, 1120 360"
           stroke="url(#bgLinesGradient)"
+          fill="none"
         />
 
-        {/* vertikal-diagonal */}
+        {/* Vertikal geschwungene Linie von unten nach oben */}
         <path
           className="line-static"
-          d="M 100 1050 L 160 780 L 260 620 L 340 480 L 460 320 L 620 200 L 840 120 L 1080 60"
+          d="M 80 1040
+             C 160 880, 280 720, 380 560
+             S  720 260, 1080  80"
           stroke="url(#bgLinesGradientSoft)"
+          fill="none"
         />
         <path
           className="line-3"
-          d="M 100 1050 L 160 780 L 260 620 L 340 480 L 460 320 L 620 200 L 840 120 L 1080 60"
+          d="M 80 1040
+             C 160 880, 280 720, 380 560
+             S  720 260, 1080  80"
           stroke="url(#bgLinesGradient)"
+          fill="none"
         />
 
-        {/* zickzack */}
+        {/* Untere Wellenlinie */}
         <path
           className="line-static"
-          d="M -50 700 L 220 640 L 380 700 L 520 660 L 720 720 L 960 680 L 1150 720"
+          d="M -120 720
+             C  40 680, 260 640, 420 700
+             S  820 780, 1160 720"
           stroke="url(#bgLinesGradientSoft)"
+          fill="none"
         />
         <path
           className="line-4 line-soft"
-          d="M -50 700 L 220 640 L 380 700 L 520 660 L 720 720 L 960 680 L 1150 720"
+          d="M -120 720
+             C  40 680, 260 640, 420 700
+             S  820 780, 1160 720"
           stroke="url(#bgLinesGradient)"
+          fill="none"
         />
       </svg>
     </div>

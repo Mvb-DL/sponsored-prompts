@@ -19,9 +19,10 @@ export default function HomePage() {
             We pay your prompt
           </h1>
           <p className="text-sm md:text-base text-zinc-300">
-            Choose a llm model, send your prompt anonymously – and let sponsors pay
-            the API and server costs while a short banner or video is shown.
-          </p>
+  Choose an LLM model, send your prompt anonymously – and let sponsors pay
+  the API and server costs by showing a short banner or video while you wait
+  for your answer.
+</p>
         </div>
 
         {/* Mobile: "Models" label + arrow that scrolls down to the model selection */}

@@ -27,6 +27,13 @@ body {
   z-index: 0; /* Content bekommt z-Index > 0 */
 }
 
+.background-lines path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.4;
+}
+
+
 .background-lines__inner {
   position: absolute;
   width: 130%;
