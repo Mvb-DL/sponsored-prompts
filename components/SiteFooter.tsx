@@ -4,48 +4,47 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-slate-800 bg-slate-950/95">
+    <footer className="border-t border-zinc-800 bg-black">
       <div className="max-w-5xl mx-auto px-4 py-5 flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-        <div className="text-[11px] leading-relaxed text-slate-400 space-y-1.5 max-w-xl">
-          <p className="text-slate-300">
+        <div className="text-[11px] leading-relaxed text-zinc-400 space-y-1.5 max-w-xl">
+          <p className="text-zinc-200">
             © {year} Mario Muster – <span className="font-semibold">We pay your prompt</span>.
           </p>
           <p>
-            Idee &amp; Konzeption:{' '}
+            Idea &amp; concept:{' '}
             <span className="font-semibold">
-              werbefinanzierte Prompt-Ausführung über einen anonymen Virtual
-              Privacy Prompt (VPP)-Proxy
+              ad-funded prompt execution via an anonymous Virtual Privacy Prompt (VPP) proxy
             </span>
-            .
+            , where sponsors pay the underlying LLM API and server costs while prompts stay anonymous.
           </p>
           <p>
-            Diese Website dient auch als{' '}
-            <span className="font-semibold">öffentlich nachvollziehbarer Zeitstempel</span>{' '}
-            dafür, dass dieses Konzept (Sponsored Prompts / VPP mit
-            Banner-/Video-Sponsoring zur Finanzierung von API-Kosten) spätestens
-            seit dem <span className="font-semibold">28.11.2025</span> in dieser Form
-            durch mich beschrieben und veröffentlicht wurde.
+            This website also serves as a{' '}
+            <span className="font-semibold">publicly verifiable timestamp</span>{' '}
+            showing that this specific concept (sponsored prompts / VPP with
+            blocking banner/video sponsoring to finance API usage) has been
+            described and implemented by me at least as of{' '}
+            <span className="font-semibold">28 November 2025</span>.
           </p>
-          <p className="text-[10px] text-slate-500">
-            Hinweis: Die rechtliche Bewertung der Priorität und Schutzfähigkeit
-            der Idee obliegt im Streitfall Gerichten oder Behörden. Diese Seite
-            liefert lediglich öffentlich zugängliche Indizien (z.B. Domain,
-            Deploy-Datum, Commits, Archivierung).
+          <p className="text-[10px] text-zinc-500">
+            Note: The legal assessment of priority and protectability of this
+            idea is ultimately up to courts or authorities. This site provides
+            publicly accessible indicators (repository history, deployment,
+            domain, archiving) of authorship and timing.
           </p>
         </div>
 
-        <div className="flex flex-row md:flex-col gap-3 text-[11px] text-slate-300">
+        <div className="flex flex-row md:flex-col gap-3 text-[11px] text-zinc-200">
           <a
             href="/impressum"
-            className="underline underline-offset-2 hover:text-sky-300"
+            className="underline underline-offset-2 hover:text-white"
           >
-            Impressum
+            Legal notice
           </a>
           <a
             href="/datenschutz"
-            className="underline underline-offset-2 hover:text-sky-300"
+            className="underline underline-offset-2 hover:text-white"
           >
-            Datenschutz
+            Privacy policy
           </a>
         </div>
       </div>

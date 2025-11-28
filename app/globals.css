@@ -9,3 +9,94 @@ body {
 * {
   scroll-behavior: smooth;
 }
+
+/* ===== Animated line background ===== */
+
+:root {
+  /* etwas sichtbarer machen, später bei Bedarf wieder runterdrehen */
+  --lines-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ===== Animated line background ===== */
+
+.background-lines {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0; /* Content bekommt z-Index > 0 */
+}
+
+.background-lines__inner {
+  position: absolute;
+  width: 130%;
+  height: 130%;
+  top: -15%;
+  left: -15%;
+}
+
+/* Grundstil für alle Linien (Farbe kommt per SVG-Gradient) */
+.background-lines path {
+  stroke-width: 1;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Keyframes: Linie "fährt" entlang (stroke-dashoffset) und blendet ein/aus */
+@keyframes line-dash {
+  0% {
+    stroke-dashoffset: 260;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+/* Animierte Linien */
+.background-lines .line-1 {
+  stroke-dasharray: 260;
+  stroke-dashoffset: 260;
+  animation: line-dash 16s ease-in-out infinite;
+}
+
+.background-lines .line-2 {
+  stroke-dasharray: 260;
+  stroke-dashoffset: 260;
+  animation: line-dash 20s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+.background-lines .line-3 {
+  stroke-dasharray: 260;
+  stroke-dashoffset: 260;
+  animation: line-dash 18s ease-in-out infinite;
+  animation-delay: 8s;
+}
+
+.background-lines .line-4 {
+  stroke-dasharray: 260;
+  stroke-dashoffset: 260;
+  animation: line-dash 22s ease-in-out infinite;
+  animation-delay: 12s;
+}
+
+/* statische Grundlinien – etwas schwächer */
+.background-lines .line-static {
+  opacity: 0.22;
+}
+
+.background-lines .line-soft {
+  opacity: 0.14;
+}
