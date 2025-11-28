@@ -29,6 +29,20 @@ export function SponsorStrip() {
           <span className="font-semibold"> We pay your prompt</span>. Your
           prompts remain anonymous in this prototype – we do not sell your data.
         </p>
+
+        {/* Arrow + hint to the explanation section below */}
+        <div className="mt-5 flex flex-col items-center gap-1">
+         
+          <a
+            href="#how-it-works"
+            className="mt-3 inline-flex flex-col items-center text-white hover:text-zinc-100 transition-colors"
+          >
+            <span className="text-[10px] uppercase tracking-[0.2em] mb-0.5">
+              Learn more below
+            </span>
+            <span className="text-xl leading-none">↓</span>
+          </a>
+        </div>
       </div>
     </section>
   );

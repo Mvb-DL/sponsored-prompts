@@ -8,7 +8,7 @@ export function SiteFooter() {
       <div className="max-w-5xl mx-auto px-4 py-5 flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
         <div className="text-[11px] leading-relaxed text-zinc-400 space-y-1.5 max-w-xl">
           <p className="text-zinc-200">
-            © {year} Mario Muster – <span className="font-semibold">We pay your prompt</span>.
+            © {year} Mario von Bassen – <span className="font-semibold">We pay your prompt</span>.
           </p>
           <p>
             Idea &amp; concept:{' '}

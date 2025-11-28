@@ -13,10 +13,27 @@ type Props = {
 export function ModelGrid({ selectedModelId, onSelectModel }: Props) {
   return (
     <div className="mt-0 md:mt-8">
-      {/* Desktop: heading inside the grid, mobile: handled in the hero */}
+      {/* Mobile: own heading + "How it works" arrow */}
+      <div className="mb-4 flex flex-col items-center gap-1 md:hidden">
+        <p className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-500 text-center">
+          Our sponsored models
+        </p>
+        <a
+          href="#how-it-works"
+          className="inline-flex flex-col items-center text-zinc-500 hover:text-zinc-100 transition-colors"
+        >
+          <span className="text-[10px] uppercase tracking-[0.2em] mb-0.5">
+            How it works
+          </span>
+          <span className="text-xl leading-none">↓</span>
+        </a>
+      </div>
+
+      {/* Desktop: heading inside the grid */}
       <h3 className="text-xs font-medium tracking-[0.2em] uppercase text-zinc-500 mb-3 text-center hidden md:block">
         Models
       </h3>
+
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {MODELS.map((model) => {
           const selected = model.id === selectedModelId;
@@ -43,7 +60,7 @@ export function ModelGrid({ selectedModelId, onSelectModel }: Props) {
                       height={40}
                       className={[
                         'h-full w-full object-contain',
-                        // Claude-Logo etwas kleiner anzeigen
+                        // Claude logo slightly smaller
                         isClaude ? 'scale-[0.75]' : '',
                       ].join(' ')}
                     />
