@@ -1,223 +1,316 @@
 // app/datenschutz/page.tsx
 
 export const metadata = {
-  title: 'Datenschutz | We pay your prompt',
+  title: 'Privacy Policy | We pay your prompt',
 };
 
 export default function DatenschutzPage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-50">
+    <main className="min-h-screen bg-black text-white">
       <div className="max-w-3xl mx-auto px-4 py-10">
         <h1 className="text-2xl font-semibold mb-4">
-          Datenschutzerklärung (DSGVO)
+          Privacy Policy (GDPR)
         </h1>
 
-        <section className="space-y-2 text-sm text-slate-200 mb-6">
-          <h2 className="text-base font-semibold mb-1">1. Verantwortlicher</h2>
+        {/* 1. Controller */}
+        <section className="space-y-2 text-sm text-zinc-200 mb-6">
+          <h2 className="text-base font-semibold mb-1">1. Controller</h2>
           <p>
-            Verantwortlich im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:
+            The controller within the meaning of the EU General Data Protection
+            Regulation (GDPR) for the website and the service
+            &quot;We pay your prompt&quot; is:
           </p>
           <p>
-            {/* TODO: Eigene Daten eintragen */}
-            Mario Muster
+            <strong>Mario von Bassen</strong>
             <br />
-            Musterstraße 1
+            Gressengasse 1
             <br />
-            1010 Wien, Österreich
+            97070 Würzburg
             <br />
-            E-Mail:{' '}
+            Germany
+            <br />
+            Email:{' '}
             <a
-              href="mailto:datenschutz@example.com"
-              className="underline underline-offset-2 text-sky-300"
+              href="mailto:mariovonbassen@gmail.com"
+              className="underline underline-offset-2 text-zinc-100 hover:text-zinc-300"
             >
-              datenschutz@example.com
+              mariovonbassen@gmail.com
             </a>
           </p>
         </section>
 
-        <section className="space-y-2 text-sm text-slate-200 mb-6">
+        {/* 2. Purpose of "We pay your prompt" / VPP */}
+        <section className="space-y-2 text-sm text-zinc-200 mb-6">
           <h2 className="text-base font-semibold mb-1">
-            2. Zweck von &quot;We pay your prompt&quot;
+            2. Purpose of &quot;We pay your prompt&quot; / Virtual Privacy Prompt (VPP)
           </h2>
           <p>
-            <strong>We pay your prompt</strong> ist ein Proxy-Dienst für
-            KI-Modelle. Nutzer können ohne Registrierung ein Modell auswählen
-            und Prompts eingeben. Der Prompt wird von uns an einen
-            externen KI-Anbieter (z.&nbsp;B. OpenAI oder vergleichbare Anbieter)
-            weitergeleitet. Die angezeigte Werbung dient dazu, die laufenden
-            Kosten für API-Aufrufe und Serverbetrieb zu finanzieren.
+            <strong>We pay your prompt</strong> is a prototype for a proxy
+            service for AI models (a so-called{' '}
+            <strong>Virtual Privacy Prompt – VPP</strong>). Users can select a
+            model and send prompts without creating an account. The long-term
+            goal is to forward prompts from this proxy to external AI providers
+            (e.g. OpenAI, Anthropic, Google or other LLM providers).
           </p>
           <p>
-            Wir speichern im Prototyp keine Chat-Verläufe serverseitig. Der
-            Verlauf verbleibt ausschließlich in der jeweiligen Browsersession
-            des Nutzers und wird beim Schließen/Neuladen der Seite verworfen.
+            While the model is processing the prompt, a sponsor banner or video
+            is displayed for a short time. These sponsors are intended to cover
+            the running costs for API usage and server infrastructure so that
+            users do not have to pay per prompt themselves.
+          </p>
+          <p>
+            In the current prototype, parts of the response flow are simulated
+            in order to demonstrate the experience (model selection, sponsored
+            overlay, anonymous session). Chat histories are{' '}
+            <strong>not stored on the server</strong> in this prototype. The
+            entire conversation exists only in your browser session and is
+            discarded when you close or reload the page.
           </p>
         </section>
 
-        <section className="space-y-2 text-sm text-slate-200 mb-6">
+        {/* 3. Data processed & legal basis */}
+        <section className="space-y-2 text-sm text-zinc-200 mb-6">
           <h2 className="text-base font-semibold mb-1">
-            3. Verarbeitete Daten & Rechtsgrundlagen
+            3. Data processed & legal bases
           </h2>
-          <h3 className="text-sm font-semibold mt-2">3.1 Prompts & KI-Anfragen</h3>
+
+          <h3 className="text-sm font-semibold mt-2">
+            3.1 Prompts & AI requests
+          </h3>
           <p>
-            Wenn du einen Prompt eingibst, wird dieser über unsere Server an den
-            jeweiligen KI-Anbieter weitergeleitet. Je nach Inhalt können
-            personenbezogene Daten enthalten sein, die du freiwillig angibst.
-            Bitte gib keine sensiblen Daten (z.B. Gesundheitsdaten,
-            besonders geschützte Kategorien nach Art. 9 DSGVO) ein.
+            When you enter a prompt, the target version of this service is
+            designed to forward that prompt via our systems to the selected AI
+            provider. Depending on the content, this may include personal data
+            that you voluntarily submit. Please do{' '}
+            <strong>not include sensitive data</strong> (e.g. health data or
+            other special categories of data pursuant to Art. 9 GDPR).
           </p>
           <p>
-            <strong>Zweck:</strong> Bereitstellung des KI-Dienstes (Beantwortung
-            deiner Anfrage).
+            <strong>Purpose:</strong> To provide the AI service (answering your
+            request) via an anonymising proxy / VPP layer.
             <br />
-            <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO
-            (Vertragserfüllung bzw. vorvertragliche Maßnahmen) bzw. bei rein
-            freiwilliger Nutzung unser berechtigtes Interesse nach Art. 6 Abs. 1
-            lit. f DSGVO an einem sicheren und wirtschaftlichen Betrieb des
-            Angebots.
+            <strong>Legal basis:</strong> Art. 6(1)(b) GDPR (performance of a
+            contract or steps prior to entering into a contract) and, for
+            general operation and security, our legitimate interests pursuant to
+            Art. 6(1)(f) GDPR in providing a secure and economically viable
+            service.
+          </p>
+          <p>
+            In the current prototype, the response may still be simulated –
+            meaning that not every request is actually forwarded to an external
+            AI provider yet. The underlying VPP concept and privacy approach
+            remain unchanged.
           </p>
 
           <h3 className="text-sm font-semibold mt-3">
-            3.2 Server-Logfiles (technisch notwendige Daten)
+            3.2 Server log files (technically necessary data)
           </h3>
           <p>
-            Beim Aufruf unserer Website werden aus technischen Gründen u.a.
-            folgende Daten verarbeitet und temporär in Server-Logfiles
-            gespeichert:
+            When you access our website, certain data is processed for technical
+            reasons and temporarily stored in server log files, such as:
           </p>
-          <ul className="ml-4 list-disc text-[13px] text-slate-200 space-y-0.5">
-            <li>IP-Adresse (gekürzt oder pseudonymisiert, soweit möglich)</li>
-            <li>Datum und Uhrzeit des Zugriffs</li>
-            <li>aufgerufene URL und Statuscode</li>
-            <li>Browsertyp, Betriebssystem (User-Agent)</li>
+          <ul className="ml-4 list-disc text-[13px] text-zinc-200 space-y-0.5">
+            <li>IP address (truncated or pseudonymised where possible)</li>
+            <li>Date and time of access</li>
+            <li>Requested URL and HTTP status code</li>
+            <li>Browser type and operating system (User-Agent)</li>
           </ul>
           <p>
-            <strong>Zweck:</strong> Sicherstellung des technischen Betriebs,
-            Fehleranalyse, Schutz vor Missbrauch.
+            <strong>Purpose:</strong> Ensuring the technical operation of the
+            website, error analysis, protection against misuse and attacks.
             <br />
-            <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO
-            (berechtigtes Interesse).
+            <strong>Legal basis:</strong> Art. 6(1)(f) GDPR (legitimate
+            interest in a secure and stable operation of the website).
           </p>
         </section>
 
-        <section className="space-y-2 text-sm text-slate-200 mb-6">
+        {/* 4. Hosting (DigitalOcean) */}
+        <section className="space-y-2 text-sm text-zinc-200 mb-6">
           <h2 className="text-base font-semibold mb-1">
-            4. Werbung & Sponsoring
+            4. Hosting with DigitalOcean
           </h2>
           <p>
-            Auf der Seite werden während der Verarbeitung deiner Prompts Banner
-            oder Videos angezeigt. Diese Sponsoren finanzieren die laufenden
-            Kosten der KI-APIs und des Serverbetriebs. Im aktuellen Prototyp
-            werden die Anzeigen statisch oder kontextarm eingebunden; es findet
-            keine personenbezogene Profilbildung durch uns statt.
+            This website and the prototype service are hosted on servers
+            provided by <strong>DigitalOcean</strong>. This means that your IP
+            address, technical request data and server log information are
+            processed on infrastructure operated by DigitalOcean.
           </p>
           <p>
-            Sollten zukünftig externe Werbenetzwerke eingebunden werden, die
-            eigene Cookies oder Tracking-Technologien verwenden, werden wir
-            dich gesondert informieren und ggf. eine gesonderte Einwilligung
-            (Opt-In) einholen.
+            Depending on the selected data center region and internal
+            configuration, DigitalOcean infrastructure may be located in or
+            outside the EU/EEA (for example, in the United States). DigitalOcean
+            acts as a processor within the meaning of Art. 28 GDPR.
+          </p>
+          <p>
+            <strong>Purpose:</strong> Provision of a reliable hosting
+            environment, server-side processing of requests, storage of log
+            files for security and stability.
+            <br />
+            <strong>Legal basis:</strong> Art. 6(1)(f) GDPR (legitimate interest
+            in using a professional hosting provider) and Art. 28 GDPR (data
+            processing under a processor agreement).
           </p>
         </section>
 
-        <section className="space-y-2 text-sm text-slate-200 mb-6">
+        {/* 5. Advertising & sponsoring */}
+        <section className="space-y-2 text-sm text-zinc-200 mb-6">
           <h2 className="text-base font-semibold mb-1">
-            5. Cookies & lokale Speicherung
+            5. Advertising & sponsoring
           </h2>
           <p>
-            Wir verwenden im Prototyp keine Tracking- oder Marketing-Cookies.
-            Es kommen ausschließlich technisch notwendige Mechanismen zum
-            Einsatz:
+            While your prompt is being processed, the website displays sponsor
+            banners or videos in a full-screen overlay. These sponsors are
+            intended to cover the ongoing costs of the AI APIs and server
+            infrastructure. The overlay is intentionally time-limited (for
+            example ~5 seconds for banners and ~10–20 seconds for videos).
           </p>
-          <ul className="ml-4 list-disc text-[13px] text-slate-200 space-y-0.5">
+          <p>
+            In the current prototype, these ads are embedded in a static or
+            low-context way. We do <strong>not</strong> build personalised user
+            profiles based on multiple sessions, and the AI answer itself
+            remains free of advertising content from us.
+          </p>
+          <p>
+            If, in the future, external ad networks are integrated that use
+            their own cookies or tracking technologies, we will inform you
+            separately and, where required by law, obtain your explicit consent
+            (opt-in) before such technologies are used. Without such consent, no
+            non-essential tracking technologies will be deployed.
+          </p>
+        </section>
+
+        {/* 6. Cookies & local storage */}
+        <section className="space-y-2 text-sm text-zinc-200 mb-6">
+          <h2 className="text-base font-semibold mb-1">
+            6. Cookies & local storage
+          </h2>
+          <p>
+            In the current prototype of &quot;We pay your prompt&quot;, we do
+            not use tracking or marketing cookies. Instead, we only rely on
+            mechanisms that are technically necessary for the operation and user
+            experience:
+          </p>
+          <ul className="ml-4 list-disc text-[13px] text-zinc-200 space-y-0.5">
             <li>
-              ein Eintrag im lokalen Speicher deines Browsers (
-              <code className="rounded bg-slate-800 px-1 py-0.5 text-[11px]">
+              An entry in your browser&apos;s local storage (
+              <code className="rounded bg-zinc-800 px-1 py-0.5 text-[11px]">
                 localStorage
               </code>
-              ), um deine Cookie-/Sponsoring-Entscheidung zu merken
+              ) to remember your cookie/consent decision (e.g. whether you
+              accept only strictly necessary or all allowed storage options).
             </li>
             <li>
-              ggf. Session-Daten, die für die Auslieferung der Website
-              technisch erforderlich sind
+              Another entry in{' '}
+              <code className="rounded bg-zinc-800 px-1 py-0.5 text-[11px]">
+                localStorage
+              </code>{' '}
+              to remember that you have already seen the sponsor invite / call
+              for partners, so that this hint is not shown repeatedly.
+            </li>
+            <li>
+              Session-level data that is required to deliver the website and
+              render the chat frontend (e.g. temporary in-memory state).
             </li>
           </ul>
           <p>
-            <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO
-            (berechtigtes Interesse an einem nutzerfreundlichen, stabilen
-            Betrieb) und § 96 TKG (bzw. nationale Bestimmungen) für technisch
-            notwendige Speicherungen.
+            <strong>Legal basis:</strong> Art. 6(1)(f) GDPR (legitimate interest
+            in providing a user-friendly, stable service) and applicable
+            national e-privacy rules for the use of strictly necessary storage
+            technologies.
           </p>
         </section>
 
-        <section className="space-y-2 text-sm text-slate-200 mb-6">
+        {/* 7. Processors & third countries (LLM providers etc.) */}
+        <section className="space-y-2 text-sm text-zinc-200 mb-6">
           <h2 className="text-base font-semibold mb-1">
-            6. Weitergabe an Auftragsverarbeiter / Drittländer
+            7. Processors & transfers to third countries
           </h2>
           <p>
-            Für die eigentliche KI-Verarbeitung werden die eingegebenen Prompts
-            an externe KI-Anbieter (z.&nbsp;B. OpenAI oder vergleichbare Dienste)
-            übermittelt. Diese können ihren Sitz außerhalb der EU/EWR haben (z.B.
-            in den USA).
+            For the actual AI processing, the service is designed to forward
+            prompts to external AI providers (e.g. OpenAI, Anthropic, Google or
+            comparable services). These providers may be located outside the
+            EU/EEA, for example in the United States.
           </p>
           <p>
-            Wir wählen unsere Dienstleister sorgfältig aus und achten – soweit
-            möglich – auf geeignete Garantien für ein angemessenes
-            Datenschutzniveau (z.B. Standardvertragsklauseln, zusätzliche
-            Schutzmaßnahmen).
+            We select our service providers carefully and, where possible, rely
+            on appropriate safeguards to ensure an adequate level of data
+            protection, such as EU Standard Contractual Clauses and additional
+            technical and organisational security measures. The specific
+            providers actually used in production will be named in a final
+            version of this privacy policy.
           </p>
         </section>
 
-        <section className="space-y-2 text-sm text-slate-200 mb-6">
+        {/* 8. Storage periods */}
+        <section className="space-y-2 text-sm text-zinc-200 mb-6">
           <h2 className="text-base font-semibold mb-1">
-            7. Speicherdauer
+            8. Storage periods
           </h2>
           <p>
-            Chat-Verläufe werden von uns im Prototyp nicht serverseitig
-            gespeichert. Der Verlauf existiert nur in deiner aktuellen
-            Browsersession und geht beim Schließen oder Neuladen der Seite
-            verloren.
+            In the current prototype, chat histories are{' '}
+            <strong>not stored on the server side</strong>. The entire
+            conversation exists only within your current browser session and is
+            lost when you close or reload the page.
           </p>
           <p>
-            Server-Logfiles werden nur so lange gespeichert, wie es zur
-            Sicherstellung von Betrieb, Sicherheit und Fehlersuche erforderlich
-            ist. Die konkrete Dauer hängt von den technischen Einstellungen und
-            gesetzlichen Aufbewahrungspflichten ab.
+            Server log files are retained only for as long as necessary to
+            ensure stable operation, troubleshoot errors, and maintain security.
+            The exact retention period depends on technical configuration and
+            any statutory retention obligations.
           </p>
         </section>
 
-        <section className="space-y-2 text-sm text-slate-200 mb-6">
+        {/* 9. Your rights under GDPR */}
+        <section className="space-y-2 text-sm text-zinc-200 mb-6">
           <h2 className="text-base font-semibold mb-1">
-            8. Deine Rechte (Betroffenenrechte)
+            9. Your rights (data subject rights)
           </h2>
           <p>
-            Dir stehen nach der DSGVO insbesondere folgende Rechte zu:
+            Under GDPR, you in particular have the following rights with respect
+            to your personal data:
           </p>
-          <ul className="ml-4 list-disc text-[13px] text-slate-200 space-y-0.5">
-            <li>Recht auf Auskunft über die verarbeiteten personenbezogenen Daten</li>
-            <li>Recht auf Berichtigung unrichtiger Daten</li>
-            <li>Recht auf Löschung (&quot;Recht auf Vergessenwerden&quot;)</li>
-            <li>Recht auf Einschränkung der Verarbeitung</li>
-            <li>Recht auf Datenübertragbarkeit</li>
-            <li>Recht auf Widerspruch gegen bestimmte Verarbeitungen</li>
+          <ul className="ml-4 list-disc text-[13px] text-zinc-200 space-y-0.5">
+            <li>Right of access (Art. 15 GDPR)</li>
+            <li>Right to rectification of inaccurate data (Art. 16 GDPR)</li>
             <li>
-              Recht auf Beschwerde bei einer Aufsichtsbehörde (z.B.
-              Datenschutzbehörde in Österreich)
+              Right to erasure (&quot;right to be forgotten&quot;, Art. 17 GDPR)
+            </li>
+            <li>Right to restriction of processing (Art. 18 GDPR)</li>
+            <li>Right to data portability (Art. 20 GDPR)</li>
+            <li>
+              Right to object to certain processing activities (Art. 21 GDPR),
+              in particular processing based on Art. 6(1)(f) GDPR
+            </li>
+            <li>
+              Right to lodge a complaint with a supervisory authority (Art. 77
+              GDPR), especially in the EU member state of your habitual
+              residence, place of work, or the place of the alleged
+              infringement
             </li>
           </ul>
           <p>
-            Du kannst dich hierfür jederzeit unter der im Impressum genannten
-            Adresse oder per E-Mail an uns wenden.
+            You can exercise your rights at any time by contacting us at the
+            address given in the imprint or via email at{' '}
+            <a
+              href="mailto:mariovonbassen@gmail.com"
+              className="underline underline-offset-2 text-zinc-100 hover:text-zinc-300"
+            >
+              mariovonbassen@gmail.com
+            </a>
+            .
           </p>
         </section>
 
-        <section className="space-y-2 text-xs text-slate-400 mt-8">
+        {/* Disclaimer */}
+        <section className="space-y-2 text-xs text-zinc-500 mt-8">
           <p>
-            Hinweis: Diese Datenschutzerklärung ist ein Muster, das speziell auf
-            den beschriebenen Prototypen (&quot;We pay your prompt&quot;) und
-            dessen Funktionsweise zugeschnitten ist. Sie ersetzt keine
-            individuelle Rechtsberatung. Bitte lass sie von einer rechtlich
-            qualifizierten Person prüfen und an deine tatsächlichen Prozesse und
-            verwendeten Dienstleister anpassen.
+            Note: This privacy policy has been drafted specifically for the
+            &quot;We pay your prompt&quot; prototype and the described Virtual
+            Privacy Prompt (VPP) concept. It does not constitute legal advice.
+            Before running the service in production, please have this document
+            reviewed and adapted by a qualified legal professional to reflect
+            your actual setup, the concrete hosting region at DigitalOcean, the
+            AI providers you use, and the legal requirements applicable to you.
           </p>
         </section>
       </div>
